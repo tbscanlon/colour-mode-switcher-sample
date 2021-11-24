@@ -1,0 +1,40 @@
+:root {
+  /* Colour palette */
+  --platinum: #e8e8e8ff;
+  --gray-x-11-gray: #bfbfbfff;
+  --manatee: #96939bff;
+  --english-violet: #564256ff;
+  --mandarin: #fc814aff;
+
+  /* Light mode colour implementations */
+  --page-background: var(--platinum);
+  --text-primary: var(--english-violet);
+  --link-text: var(--mandarin);
+}
+
+/* Dark mode colour implementations */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-background: var(--english-violet);
+    --text-primary: var(--platinum);
+    --link-text: var(--mandarin);
+  }
+}
+
+html {
+  background-color: #e8e8e8ff; /* old browsers understand this, so they use this rule */
+  background-color: var(
+    --page-background
+  ); /* old browsers don't understand this, so they ignore this rule */
+}
+
+h1,
+p {
+  color: #564256ff;
+  color: var(--text-primary);
+}
+
+a {
+  color: #fc814aff;
+  color: var(--link-text);
+}
